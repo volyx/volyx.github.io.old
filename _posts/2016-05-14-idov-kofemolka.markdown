@@ -1,6 +1,11 @@
-= Михаил Идов "Кофемолка"
-:hp-alt-title: idov kofemolka
-:hp-tags: book
+---
+layout:     post
+title:      Михаил Идов "Кофемолка"
+date:       2016-05-14
+categories: c-plus-plus course stepic
+---
+
+![desk](images/кофемолка.jpeg)
 
 Сразу после прочетения книги я записываю все мысли, которые появились в голове. Затем через некоторое время расшифровываю ее.
 

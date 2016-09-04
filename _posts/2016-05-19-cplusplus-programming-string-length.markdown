@@ -1,10 +1,13 @@
-= Программирование на языке C++. Длина строки
-:hp-alt-title: cplusplus programming string length
-:hp-tags: Stepic, C++, course
+---
+layout:     post
+title:      Длина строки
+date:       2016-05-19
+categories: c-plus-plus course stepic
+---
 
 Задание 
 
-https://stepic.org/lesson/Использование-указателей-540/step/6
+[https://stepic.org/lesson/Использование-указателей-540/step/6](https://stepic.org/lesson/Использование-указателей-540/step/6)
 
 Очень часто для работы со строками нам нужно сначала вычислить длину строки. Для C-style строк длина нигде явно не хранится, но её можно вычислить. Напишите функцию, которая вычисляет длину C-style строки. Учтите, что завершающий нулевой символ считать не нужно. 
 
@@ -12,8 +15,7 @@ https://stepic.org/lesson/Использование-указателей-540/st
 
 Решение
 
-[source, cpp]
-----
+{% highlight cpp %}
 #include <iostream>
 using namespace std;
 
@@ -25,16 +27,13 @@ unsigned strlen(const char *str)
 		i++;
 		
 	}
-	
 	return  i;
 }
 
 int main() {
-	
 	char s[] = "Hello World!\n"; 
-	
     cout << strlen(s);
 } 
-----
+{% endhighlight %}
 
-Сам курс https://stepic.org/course/7
+Сам курс [https://stepic.org/course/7](https://stepic.org/course/7)
