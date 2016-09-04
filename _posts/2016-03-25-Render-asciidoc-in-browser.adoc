@@ -1,0 +1,48 @@
+= Рендеринг asccidoc в браузере
+:hp-alt-title: Render asciidoc in browser
+
+
+Давно хотелось разобраться с этим вопросом. Ведь аскидок очень удобен и гибок. 
+
+Посмотрите на его синтаксис и его http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[документацию] - это просто красиво.
+
+
+К сожалению аскидок коммандная утилита, и каждый раз генерить html файл не очень удобно.
+
+Есть всякие превьюхи для него:
+
+- Десктопный превью написанный на JavaFX - http://www.asciidocfx.com/[asciidocfx]
+- https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia[Расширение для хрома]
+- Есть расширение для https://github.com/SublimeText/AsciiDoc)[sublime text] и https://github.com/asciidoctor/atom-asciidoc-preview[atom] и  https://github.com/asciidoctor/brackets-asciidoc-preview[brackets]
+
+Почти все они описаны http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[тут]
+
+Все утилиты такого рода подразумевают https://ru.wikipedia.org/wiki/WYSIWYG[WYSIWYG] редактирование, но не решают проблему - перегенерирование документов при каждом редактировании.
+
+Почему нельзя автоматически это делать в браузере? Ведь расширение хрома указывает на то что такая возможность есть.
+
+И если бы получилось писать например документацию в аскидок формате и потом отображать динамически браузером это было бы здорово.
+
+Такая возможность есть! Ладно, хватит болтовни.
+
+> “Talk is cheap. Show me the code.”  
+>>  Linus Torvalds
+
+Весь код доступен на https://github.com/volyx/asciidocjs-project[гитхабе] Там же приведена инструкция - какчё-куда.
+
+И еще раз там же висит http://volyx.github.io/asciidocjs-project/[демка]
+
+Дальше можно полюбоваться на:
+
+- красивую http://groovy-lang.org/operators.html[документацию грувей], которая тоже использует аскидок;
+- как https://spring.io/blog/2013/12/13/spring-s-getting-started-guides-migrated-to-asciidoctor[спринг переводил] свои доки на аскидок
+- http://blog.ninja-squad.com/2014/02/25/rest-api-doc-with-asciidoctor-and-gradle/[генерировать rest-документацию] с помощью gradle 
+- и совсем http://grooscript.org/demo/asciidoctor.html[сумашедшее превью аскидока] на грускрипте(имеено http://grooscript.org/[из-за грускрипта] оно сумасшедшее) 
+
+Даже Аллен удивлен.
+
+++++
+<blockquote class="twitter-tweet" lang="ru"><p lang="en" dir="ltr">Convert AsciiDoc using Groovy in JavaScript using Grooscript &amp; Asciidoctor.js. This is just getting crazy awesome! <a href="http://t.co/UsxUYpvDFy">http://t.co/UsxUYpvDFy</a></p>&mdash; Dan Allen (@mojavelinux) <a href="https://twitter.com/mojavelinux/status/519789486872334337">8 октября 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+++++
+
