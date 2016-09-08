@@ -1,3 +1,9 @@
+---
+layout:     post
+title:      Модульная секта
+date:       2016-01-19
+categories: book
+---
 
 <img src="/content/images/2016/01/modulnie-sistemy-super.jpg"  height="400" />
 

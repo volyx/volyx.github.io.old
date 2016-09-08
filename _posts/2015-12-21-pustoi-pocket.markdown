@@ -1,4 +1,11 @@
-![](/content/images/2015/11/pocket-logo-icon.png)
+---
+layout:     post
+title:      Пустой карман
+date:       2015-12-21
+categories: pocket
+---
+
+![pocket](/images/2015/11/pocket-logo-icon.png)
 
 Безжалостная чистка ссылок примерно каждые две недели. Без цензуры и преукрас, только то, что добавил в закладки([в покет](https://getpocket.com))
 
@@ -19,10 +26,6 @@
 * Isomorphic JavaScript: The Future of Web Apps http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/
 * [Чему мы научились, разрабатывая backend](http://m.habrahabr.ru/company/parallels/blog/269927/)
 * [Фильтр Блума](http://habrahabr.ru/post/112069/)
-* [
-Coupling Versus Autonomy in Microservices
-](https://www.voxxed.com/blog/2015/04/coupling-versus-autonomy-in-microservices/)
-* [
-How We Get Things Done – Productivity Stacks For Tech Startups
-](https://www.voxxed.com/blog/2015/09/how-we-get-things-done-productivity-stacks-for-tech-startups/)
+* [Coupling Versus Autonomy in Microservices](https://www.voxxed.com/blog/2015/04/coupling-versus-autonomy-in-microservices/)
+* [How We Get Things Done – Productivity Stacks For Tech Startups](https://www.voxxed.com/blog/2015/09/how-we-get-things-done-productivity-stacks-for-tech-startups/)
 

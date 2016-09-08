@@ -3,7 +3,7 @@ layout:     post
 title:      Уроки для горнолыжников
 date:       2015-12-22
 summary:    Обзоры видео треннингов по горнолыжному спуску.
-categories: лыжи
+categories: skiing
 ---
 
 
