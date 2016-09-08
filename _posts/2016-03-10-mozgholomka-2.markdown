@@ -1,13 +1,15 @@
-#### Задание
+---
+layout:     post
+title:      Написать функцию, переворачивающую строку без использования дополнительной памяти
+date:       2016-03-13
+categories: mozgolomka
+---
 
-Написать функцию, переворачивающую строку без использования дополнительной памяти
+[Задача](https://www.interviewcake.com/question/javascript/reverse-string-in-place)
 
-<hr>
-
-### Решение
 Мы будем менять первый и последний элемент, затем второй и второй с конца, и так далее пока не достигнем середины.
 
-```language-java
+{% highlight java %}
   public String reverse(String str) {
 
     char[] strChars = str.toCharArray();
@@ -29,11 +31,10 @@
 
     return new String(strChars);
 }
-```
+{% endhighlight %}
 
 Сложность
 `O(n)` по времени и `O(1)` по доп. месту.
 
-<hr/>
-https://www.interviewcake.com/question/javascript/reverse-string-in-place
+
 

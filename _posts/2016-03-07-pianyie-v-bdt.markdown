@@ -1,3 +1,9 @@
+---
+layout:     post
+title:      Пьяные
+date:       2016-03-07
+categories: teatral
+---
 
 ![](https://media.teatrall.ru/photos/photo/f350c52eaa2ae293d797b573e656bb36.jpg)
 
@@ -14,8 +20,8 @@
 
 Текст пьесы есть в журнале "Драматургия":
 
-- Часть 1 http://drammaturgia.org/plays/32-ivan-vyrypaev-pyanye.html
-- Часть 2 http://drammaturgia.org/33-ivan-vyrypaev-pyanye-str-2.html
+- [Часть 1](http://drammaturgia.org/plays/32-ivan-vyrypaev-pyanye.html)
+- [Часть 2](http://drammaturgia.org/33-ivan-vyrypaev-pyanye-str-2.html)
 
 Да, есть такой журнал, и в нем печатают пьесы. Аж 6 номеров выпущено. 
 

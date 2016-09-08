@@ -1,8 +1,15 @@
-#### Задача
-Имея ссылку на узел удалить его из односвязного списка. Начальный код такой:
+---
+layout:     post
+title:      Имея ссылку на узел удалить его из односвязного списка
+date:       2016-03-06
+categories: mozgolomka
+---
 
-```language-java
-  public static class LinkedListNode {
+Начальный код такой:
+
+{% highlight java %}
+
+public static class LinkedListNode {
 
     public String value;
     public LinkedListNode next;
@@ -20,7 +27,8 @@ a.next = b;
 b.next = c;
 
 deleteNode(b);
-```
+
+{% endhighlight %}
 
 #### Забегая вперед
 
@@ -58,7 +66,7 @@ deleteNode(b);
 
 В некоторых языках, например в С нам потребовалось бы руками удалять скопированный узел. Но в Java есть сборщик мусора, который сам позаботится об этом.
 
-```language-java
+{% highlight java %}
   public void deleteNode(LinkedListNode nodeToDelete) {
 
     // get the input node's next node, the one we want to skip to
@@ -78,7 +86,7 @@ deleteNode(b);
         throw new IllegalArgumentException("Can't delete the last node with this method!");
     }
 }
-```
+{% endhighlight %}
 
 Есть две проблемы в нашем решении:
 
@@ -86,7 +94,7 @@ deleteNode(b);
 
 - **Второе,** метод может выдавать неожиданные результаты. Возьмем такой код:
 
-```language-java
+{% highlight java %}
 LinkedListNode a = new LinkedListNode(3);
 LinkedListNode b = new LinkedListNode(8);
 LinkedListNode c = new LinkedListNode(2);
@@ -95,7 +103,7 @@ a.next = b;
 b.next = c;
 
 deleteNode(b);
-```
+{% endhighlight %}
 
 Есть несколько побочных эффектов:
 
@@ -105,5 +113,4 @@ deleteNode(b);
 #### Сложность
 `O(1)` по времени и `O(1)` по дополнительной памяти.
 
-#### Источник
-https://www.interviewcake.com/question/java/delete-node
+[Источник](https://www.interviewcake.com/question/java/delete-node)
