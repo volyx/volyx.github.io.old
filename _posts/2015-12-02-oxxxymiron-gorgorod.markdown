@@ -1,3 +1,10 @@
+---
+layout:     post
+title:      Oxxxymiron - Горгород
+date:       2015-12-02
+categories: music
+---
+
 <iframe frameborder="0" style="border:none;width:900px;height:600px;" width="900" height="600" src="https://music.yandex.ru/iframe/#album/3087311">Слушайте <a href='https://music.yandex.ru/album/3087311'>ГОРГОРОД</a> — <a href='https://music.yandex.ru/artist/249991'>Oxxxymiron</a> на Яндекс.Музыке</iframe>
 
 Альбом нужно слушать строго по порядку. Сюжет вертиться вокруг персонажей:

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Принципы смешного
-date:       2016-12-31
+date:       2015-12-31
 categories: humor
 ---
 
