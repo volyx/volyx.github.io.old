@@ -16,7 +16,7 @@ categories: mipt
 def j = 0
 def b = new ArrayList<Integer>()
 for (def i = 1; i < 10000; i++) {
-//def i = 2245   
+
     int[] a = new int[4]   
     a[0] = i / 1000 
     a[1] = i / 100  -  a[0]*10
@@ -50,3 +50,5 @@ for (def i = 1; i < 10000; i++) {
 println("j=${9999 - j}")
 
 {% endhighlight %}
+
+Суровый код, но он решает поставленную задачу.
