@@ -23,9 +23,9 @@ categories: video
 
 -----
 
-### Шерховатости в дизайне
+### Шероховатости в дизайне
 
-Человек любит шерховатости, не любит когда все гладенько, ровненько.
+Человек любит шероховатости, не любит когда все гладенько, ровненько.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/otf7bGP5ShM?rel=0" frameborder="0" allowfullscreen></iframe>
 

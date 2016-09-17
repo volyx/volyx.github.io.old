@@ -10,7 +10,7 @@ categories: asciidoc
 Посмотрите на его синтаксис и его [документацию](http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/) - это просто красиво.
 
 
-К сожалению аскидок коммандная утилита, и каждый раз генерить html файл не очень удобно.
+К сожалению аскидок командная утилита, и каждый раз генерить html файл не очень удобно.
 
 Есть всякие превьюхи для него:
 
@@ -40,7 +40,7 @@ categories: asciidoc
 - красивую [документацию грувей](http://groovy-lang.org/operators.html), которая тоже использует аскидок;
 - как [спринг переводил](https://spring.io/blog/2013/12/13/spring-s-getting-started-guides-migrated-to-asciidoctor) свои доки на аскидок
 - [генерировать rest-документацию](http://blog.ninja-squad.com/2014/02/25/rest-api-doc-with-asciidoctor-and-gradle/) с помощью gradle 
-- и совсем [сумашедшее превью аскидока](http://grooscript.org/demo/asciidoctor.html) на грускрипте(имеено [из-за грускрипта](http://grooscript.org/)оно сумасшедшее) 
+- и совсем [сумасшедшее превью аскидока](http://grooscript.org/demo/asciidoctor.html) на грускрипте(именно [из-за грускрипта](http://grooscript.org/)оно сумасшедшее) 
 
 Даже Аллен удивлен.
 
