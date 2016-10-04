@@ -1,0 +1,18 @@
+---
+layout: default
+title: Архив
+---
+<div id="post">
+	<h1>Архив</h1>
+
+	<ul class="posts">  
+	{% for post in site.posts %}  
+	   <li> 
+		   <a href="{{ BASE_PATH }}{{ post.url }}">  
+		   {{ post.title }}</a>  
+		   <small>{{ post.date | date: site.date_format}}</small>
+	   </li>  
+	{% endfor %}  
+	</ul>
+		
+</div>
