@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      Javaswag выпуск 16
-date:       2016-09-18
+title:      Javaswag выпуск 17
+date:       2016-09-28
 categories: javaswag
 ---
 
