@@ -5,20 +5,25 @@ permalink: /javaswag/
 ---
 
 <div>
-  <h1>Javaswag <small>Еженедельная рассылка по Java</small></h1>
+  <center><h1>Javaswag <small>Еженедельная рассылка по Java</small></h1></center>
 </div>
 
 <div class="posts">
   {% for post in site.posts %}
 
-    {% if post.categories != null %}
+      {% if post.categories != null and post.categories contains 'javaswag' %}
+          <div class="post">
+            <header class="post-header">
+            <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+              <h1 class="h2">{{ post.title }}</h1>
+              </a>
+            </header>
+            <article class="post-content">
+            {{ post.content }}
+            </article>
+          </div>
 
-      {% assign cats = post.categories | split: " " %}
-
-      {% if post.categories contains 'javaswag' %}
-          {{ content}}
-        </div>
       {% endif %}
-    {% endif %}
+
   {% endfor %}
 </div>
