@@ -1,0 +1,24 @@
+---
+layout: category
+title: Javaswag
+permalink: /javaswag/
+---
+
+<div>
+  <h1>Javaswag <small>Еженедельная рассылка по Java</small></h1>
+</div>
+
+<div class="posts">
+  {% for post in site.posts %}
+
+    {% if post.categories != null %}
+
+      {% assign cats = post.categories | split: " " %}
+
+      {% if post.categories contains 'javaswag' %}
+          {{ content}}
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
