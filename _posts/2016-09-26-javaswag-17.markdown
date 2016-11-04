@@ -42,7 +42,5 @@ categories: javaswag
 
 Еженедельные выпуски Джавасвэга в Телеграме — [http://telegram.me/javaswag](http://telegram.me/javaswag).
 
-![des](/images/dilbert.gif)
-
 Удачи!
 
