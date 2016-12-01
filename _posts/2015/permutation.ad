@@ -1,0 +1,37 @@
+title=Перестановочки
+date=2015-08-28
+type=post
+tags=algorithm
+status=published
+summary=
+~~~~~~
+
+:icons: font
+
+:sectanchors:
+
+== Перестановочки
+
+image::../../img/permutation.png[]
+
+
+[source, groovy]
+----
+def permutation(String input){
+          permutation("", input);
+}
+
+def permutation(String perm, String word) {
+        if (word.isEmpty()) {
+            println(perm + word);
+
+        } else {
+            for (int i = 0; i < word.length(); i++) {
+                permutation(perm + word.charAt(i), word.substring(0, i) 
+                                        + word.substring(i + 1, word.length()));
+            }
+        }
+}
+
+permutation("123")
+----
