@@ -1,32 +1,33 @@
-title=Получение метаданых о фотографии
-date=2014-12-18
-type=post
-tags=java, metaextractor
-status=published
-image=../img/metadata.jpg
-summary=В файле какого-нибудь изображения хранится очень много всякой полезной информации, например: дата съемки, размеры, всякие уровни компресии, марка и модель фотоаппарата и т д ... Хотелось бы как-то получить ее в java
-~~~~~~
+---
+layout:     post
+title:      Получение метаданых о фотографии
+date:       2014-12-18
+categories: java image
+---
 
-Все это в java можно вытащить с помощью удобной библиотеки https://github.com/drewnoakes/metadata-extractor[metadata-extractor]. Она умеет понимать следущие форматы:
+![](/images/metadata.jpg)
 
-* http://en.wikipedia.org/wiki/Exchangeable_image_file_format[Exif]
-* http://en.wikipedia.org/wiki/IPTC[IPTC]
-* http://en.wikipedia.org/wiki/Extensible_Metadata_Platform[XMP]
-* http://en.wikipedia.org/wiki/JPEG_File_Interchange_Format[JFIF / JFXX]
-* http://en.wikipedia.org/wiki/ICC_profile[ICC] Profiles
-* http://en.wikipedia.org/wiki/Photoshop[Photoshop] fields
-* http://en.wikipedia.org/wiki/Portable_Network_Graphics[PNG] properties
-* http://en.wikipedia.org/wiki/BMP_file_format[BMP] properties
-* http://en.wikipedia.org/wiki/Graphics_Interchange_Format[GIF] properties
+В файле какого-нибудь изображения хранится очень много всякой полезной информации, например: дата съемки, размеры, всякие уровни компресии, марка и модель фотоаппарата и т д ... Хотелось бы как-то получить ее в java
 
-Например вот http://en.wikipedia.org/wiki/Exchangeable_image_file_format[Exif]
+Все это в java можно вытащить с помощью удобной библиотеки [metadata-extractor](https://github.com/drewnoakes/metadata-extractor). Она умеет понимать следущие форматы:
 
-image::../../img/Exif.jpg[]
+* [Exif](http://en.wikipedia.org/wiki/Exchangeable_image_file_format)
+* [IPTC](http://en.wikipedia.org/wiki/IPTC)
+* [XMP](http://en.wikipedia.org/wiki/Extensible_Metadata_Platform)
+* [JFIF / JFXX](http://en.wikipedia.org/wiki/JPEG_File_Interchange_Format)
+* [ICC](http://en.wikipedia.org/wiki/ICC_profile) Profiles
+* [Photoshop](http://en.wikipedia.org/wiki/Photoshop) fields
+* [PNG](http://en.wikipedia.org/wiki/Portable_Network_Graphics) properties
+* [BMP](http://en.wikipedia.org/wiki/BMP_file_format) properties
+* [GIF](http://en.wikipedia.org/wiki/Graphics_Interchange_Format) properties
+
+Например вот [Exif](http://en.wikipedia.org/wiki/Exchangeable_image_file_format)
+
+![](/images/Exif.jpg)
 
 А вот краткий пример на `groovy`, который позволяет получить достаточно много информации
 
-[source,groovy]
-----
+{% highlight groovy %}
 @Grapes( 
 @Grab(group='com.drewnoakes', module='metadata-extractor', version='2.7.0') 
 )
@@ -52,9 +53,9 @@ ExifSubIFDDirectory directory = metadata.getDirectory(ExifSubIFDDirectory.class)
 Date date = directory.getDate(ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL);
 
 println ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL + "=" + date
-----
+{% endhighlight %}
 
-----
+{% highlight bash %}
 [JPEG] Compression Type - Baseline
 [JPEG] Data Precision - 8 bits
 [JPEG] Image Height - 768 pixels
@@ -89,5 +90,5 @@ println ExifSubIFDDirectory.TAG_DATETIME_ORIGINAL + "=" + date
 [Adobe JPEG] Flags 1 - 0
 [Adobe JPEG] Color Transform - YCbCr
 36867=Mon Feb 11 11:32:43 FET 2008
-----
+{% endhighlight %}
 

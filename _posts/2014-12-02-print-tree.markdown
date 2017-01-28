@@ -1,15 +1,17 @@
-title=Красивишная печать дерева в консоль TreeNode
-date=2014-12-02
-type=post
-tags=дерево, java
-status=published
-summary= Структура, известная у программистов как дерево, используется довольно часто. Соответственно, так же часто возникает проблема отладки кода, который работает с этой структурой. Очень удобно иметь под рукой удобный метод "toString()", который нарисует это дерево, например в консоли в графическом виде. 
-image=../img/print-tree.png
-~~~~~~
+---
+layout:     post
+title:      Красивишная печать дерева в консоль TreeNode
+date:       2014-12-02
+categories: java дерево
+---
+
+Cтруктура, известная у программистов как дерево, используется довольно часто. Соответственно, так же часто возникает проблема отладки кода, который работает с этой структурой. Очень удобно иметь под рукой удобный метод "toString()", который нарисует это дерево, например в консоли в графическом виде. 
+
+![](/images/print-tree.png)
 
 Печатает дерево в консоли, с помощью System.out
-[source,java]
-----
+{% highlight java %}
+
  public void print(TreeNode root) {
         print(root, "", true);
     }
@@ -24,9 +26,11 @@ image=../img/print-tree.png
             print(children.get(children.size() - 1), prefix + (isTail ? "    " : "│   "), true);
         }
 }
-----
+{% endhighlight %}
+
+
 Вывод:
-[source,java]
+{% highlight java %}
 ----
 └── rootFakeNode
     └── lock0
@@ -35,7 +39,7 @@ image=../img/print-tree.png
             ├── branchName0
             └── lock0
                 └── branchName0
-----
+{% endhighlight %}
 Вау, красотища!!!
 
 

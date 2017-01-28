@@ -1,22 +1,14 @@
-title=Перестановочки
-date=2015-08-28
-type=post
-tags=algorithm
-status=published
-summary=
-~~~~~~
+---
+layout:     post
+title:      Перестановочки
+date:       2015-08-28
+categories: algorithm
+---
 
-:icons: font
-
-:sectanchors:
-
-== Перестановочки
-
-image::../../img/permutation.png[]
+![](/images/permutation.png)
 
 
-[source, groovy]
-----
+{% highlight java %}
 def permutation(String input){
           permutation("", input);
 }
@@ -34,4 +26,4 @@ def permutation(String perm, String word) {
 }
 
 permutation("123")
-----
+{% endhighlight%}

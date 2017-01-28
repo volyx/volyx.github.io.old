@@ -1,15 +1,11 @@
-title=Первый релиз в Maven Central
-date=2015-08-26
-type=post
-tags=maven
-status=published
-summary=
-~~~~~~
-
-== Первый релиз в Maven Central
+---
+layout:     post
+title:      Первый релиз в Maven Central
+date:       2015-08-26
+categories: maven
+---
  
-image::../../img/sonatype.png[]
-
+![](/images/sonatype.png)
 
 Основная мысль RTFM!
 
@@ -17,7 +13,7 @@ image::../../img/sonatype.png[]
 
 Теперь с нетерпением жду когда мое творенье, а точнее  сказать просто форкнутое чужое творенье появится в центральном репозиториии. А звучит то как - *"в Центральном!"*.
 
-image::../../img/update-maven.gif[]
+![](/images/update-maven.gif)
 
 Итак про форкнутую библиотеку, если говорить по русски - то стыренную, а именно:
 
@@ -27,22 +23,21 @@ image::../../img/update-maven.gif[]
 
 Но стыренную официально с подтверждением, а точнее с отсутсвием такого от самого владельца.
 
-image::../../img/email-mongeez.png[]
+![](/images/email-mongeez.png)
 
 Так что совесть моя чиста. А тем временем скачать ее хотели многие, судите сами:
 
-image::../../img/mongeez-issues.png[]
+![](/images/mongeez-issues.png)
 
-((https://github.com/secondmarket/mongeez/issues/50)) Источник
+[Источник](https://github.com/secondmarket/mongeez/issues/50)
 
 Похоже пока заинтересованные люди работали в компании её поддерживали, а потом перестали, в то время как монга только развивалась и обрастала новыми инструментами.
 
-image::../../img/mongeez-commits.png[]
+![](/images/mongeez-commits.png)
 
-Новый дом библиотеки теперь тут - ((https://github.com/volyihin/mongeez)). Скачать можно так:
+Новый дом библиотеки теперь тут - (https://github.com/volyihin/mongeez). Скачать можно так:
 
-[source, xml]
-----
+{% highlight xml %}
 <code>
 <dependency>
   <groupId>com.github.volyihin</groupId>
@@ -50,16 +45,17 @@ image::../../img/mongeez-commits.png[]
   <version>0.9.5</version>
 </dependency>
 </code>
-----
+{% endhighlight %}
+
 А вот и в самом централе:
 
-image::../../img/maven-central.png[]
+![](/images/maven-central.png)
 
 *Update:*
 Мне только что пришло письмо от Олексия.
 
-image::../../img/mongeez-answer.png[]
+![](/images/mongeez-answer.png)
 
 И вот теперь встала дилемма. С одной стороны релиз сделан, и мне не сильно нужна помощь, с другой стороны - совесть.
 
-image::../../img/dreaminess.jpg["dreaminess",width=400px]
+![](/images/dreaminess.jpg)

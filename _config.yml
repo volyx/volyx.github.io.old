@@ -1,7 +1,7 @@
 # Site settings
 title:       Дима Волыхин
 email:       volyihin@gmail.com
-author:      John Otander
+author:      Дима Волыхин
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 baseurl:     ""
 url:         "/"
