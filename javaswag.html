@@ -12,16 +12,19 @@ permalink: /javaswag/
   {% for post in site.posts %}
 
       {% if post.categories != null and post.categories contains 'javaswag' %}
-          <div class="post">
-            <header class="post-header">
-            <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
-              <h1 class="h2">{{ post.title }}</h1>
-              </a>
-            </header>
-            <article class="post-content">
-            {{ post.content }}
-            </article>
-          </div>
+
+            <div class="post py3">
+              <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+              <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">&#9733; {{ post.title }}</h3></a>
+              <p class="post-summary">
+                {% if post.summary %}
+                  {{ post.summary }}
+                {% else %}
+                  {{ post.excerpt }}
+                {% endif %}
+                 <!-- {{ post.content }} -->
+              </p>
+            </div>
 
       {% endif %}
 

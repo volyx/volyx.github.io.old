@@ -2,6 +2,7 @@
 layout:     post
 title:      Javaswag выпуск 15
 date:       2016-09-08
+summary:	Привет! В выпуске - новый @Depracted в Java 9, быстрый старт с Grails и микросервисная архитектура.
 categories: javaswag
 ---
 

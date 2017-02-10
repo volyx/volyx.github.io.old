@@ -2,6 +2,7 @@
 layout:     post
 title:      Javaswag выпуск 17
 date:       2016-09-28
+summary:	В выпуске видео с JavaOne 2016, модульность в Java 9 и оптимизации JVM.
 categories: javaswag
 ---
 

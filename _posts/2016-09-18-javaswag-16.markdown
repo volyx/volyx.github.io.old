@@ -2,6 +2,7 @@
 layout:     post
 title:      Javaswag выпуск 16
 date:       2016-09-18
+summary:	Привет! В выпуске архитектура Spark, перенос релиза Java 9 и Hibernate Search.
 categories: javaswag
 ---
 

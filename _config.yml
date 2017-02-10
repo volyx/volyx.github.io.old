@@ -112,6 +112,7 @@ sass:
   compressed: true
 gems:
   - jekyll-paginate
+  - jekyll-bits
   - jekyll-sitemap
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor]
