@@ -3,7 +3,7 @@ layout:     post
 title:      Обзор книги "Netty in Action"
 date:       2015-01-22
 summary:    В выпуске тонкости экзекъютор сервисов, сохранение объектов в Редис и способы упаковки приложения в исполняемый архив.
-categories: javaswag
+categories: netty
 ---
 
 ![](/images/netty.jpg)
