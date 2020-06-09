@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Top K Frequent Words | Your Own Griffin </title>
+
+  <!-- CSS -->
+  <!-- <link rel="stylesheet" href="/assets/css/poole.css"> -->
+  <!-- <link rel="stylesheet" href="/assets/css/syntax.css"> -->
+  <!-- <link rel="stylesheet" href="/assets/css/hyde.css"> -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"> -->
+  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/monokai.min.css"> -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script> -->
+  <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+  <!-- Icons -->
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.1.min.css"/> -->
+ 
+
+  <!-- css from jygments -->
+
+<style type="text/css">
+/* from https://anders.unix.se/ */
+/* 1024 bytes of CSS should be enough for anybody. */
+
+body {
+  color: #222;
+  line-height: 1.5;
+  margin: 1em auto;
+  max-width: 40em;
+  padding: 0 1em;
+}
+
+@media only screen and (min-width: 40.063em) {
+  body {
+    font-size: 112.5%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  font-size: x-large;
+}
+
+a {
+  border-bottom: 1px solid #bbb;
+  color: #111;
+  text-decoration: none;
+}
+
+ul {
+  list-style: circle;
+}
+
+ul,
+ol {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 0.3em;
+  margin-left: 1em;
+}
+
+blockquote {
+  border-left: 1px solid #ccc;
+  margin: .7rem 0;
+  padding-left: 1rem;
+}
+
+figure > a,
+a img {
+  border-bottom: none;
+}
+
+img {
+  height: auto;
+  margin: .7rem auto;
+  max-width: 100%;
+}
+
+figcaption {
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  display: block;
+  height: 1rem;
+  line-height: 1;
+  margin: 0 0.7em;
+  padding: 0;
+}
+
+hr::after {
+  color: #333;
+  content: "\00B6";
+  display: block;
+  text-align: center;
+}
+
+header,
+footer,
+.center {
+  text-align: center;
+}
+
+footer {
+  color: #b64a4a;
+}
+
+/* Fnord. */
+
+</style>
+
+
+  <style type="text/css">
+    td.linenos {
+        background-color: #f0f0f0;
+        padding-right: 10px;
+    }
+
+    span.lineno {
+        background-color: #f0f0f0;
+        padding: 0 5px 0 5px;
+    }
+
+    pre {
+        line-height: 125%;
+        background-color: aliceblue;
+    }
+
+    .w {
+        color: #bbbbbb;
+    }
+
+    /* Whitespace */
+    .gh {
+        font-weight: bold;
+        color: #000080;
+    }
+
+    /* Generic.Heading */
+    .sh {
+        color: #BA2121;
+    }
+
+    /* String.Heredoc */
+    .c1 {
+        font-style: italic;
+        color: #408080;
+    }
+
+    /* Comment.Single */
+    .k {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Keyword */
+    .gt {
+        color: #04D;
+    }
+
+    /* Generic.Traceback */
+    .c {
+        font-style: italic;
+        color: #408080;
+    }
+
+    /* Comment */
+    .nv {
+        color: #19177C;
+    }
+
+    /* Name.Variable */
+    .vi {
+        color: #19177C;
+    }
+
+    /* Name.Variable.Instance */
+    .mi {
+        color: #666666;
+    }
+
+    /* Number.Integer */
+    .gp {
+        font-weight: bold;
+        color: #000080;
+    }
+
+    /* Generic.Prompt */
+    .nf {
+        color: #0000FF;
+    }
+
+    /* Name.Function */
+    .o {
+        color: #666666;
+    }
+
+    /* Operator */
+    .nc {
+        font-weight: bold;
+        color: #0000FF;
+    }
+
+    /* Name.Class */
+    .si {
+        font-weight: bold;
+        color: #BB6688;
+    }
+
+    /* String.Interpol */
+    .s2 {
+        color: #BA2121;
+    }
+
+    /* String.Double */
+    .mf {
+        color: #666666;
+    }
+
+    /* Number.Float */
+    .gr {
+        color: #FF0000;
+    }
+
+    /* Generic.Error */
+    .gu {
+        font-weight: bold;
+        color: #800080;
+    }
+
+    /* Generic.Subheading */
+    .nb {
+        color: #008000;
+    }
+
+    /* Name.Builtin */
+    .kd {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Keyword.Declaration */
+    .kt {
+        color: #B00040;
+    }
+
+    /* Keyword.Type */
+    .sx {
+        color: #008000;
+    }
+
+    /* String.Other */
+    .s {
+        color: #BA2121;
+    }
+
+    /* String */
+    .m {
+        color: #666666;
+    }
+
+    /* Number */
+    .mh {
+        color: #666666;
+    }
+
+    /* Number.Hex */
+    .sr {
+        color: #BB6688;
+    }
+
+    /* String.Regex */
+    .na {
+        color: #7D9029;
+    }
+
+    /* Name.Attribute */
+    .sb {
+        color: #BA2121;
+    }
+
+    /* String.Backtick */
+    .err {
+        color: border;
+        color: #FF0000;
+    }
+
+    /* Error */
+    .nl {
+        color: #A0A000;
+    }
+
+    /* Name.Label */
+    .nt {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Name.Tag */
+    .cs {
+        font-style: italic;
+        color: #408080;
+    }
+
+    /* Comment.Special */
+    .vg {
+        color: #19177C;
+    }
+
+    /* Name.Variable.Global */
+    .ss {
+        color: #19177C;
+    }
+
+    /* String.Symbol */
+    .cm {
+        font-style: italic;
+        color: #408080;
+    }
+
+    /* Comment.Multiline */
+    .ge {
+        font-style: italic;
+    }
+
+    /* Generic.Emph */
+    .gi {
+        color: #00A000;
+    }
+
+    /* Generic.Inserted */
+    .nd {
+        color: #AA22FF;
+    }
+
+    /* Name.Decorator */
+    .sc {
+        color: #BA2121;
+    }
+
+    /* String.Char */
+    .kn {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Keyword.Namespace */
+    .il {
+        color: #666666;
+    }
+
+    /* Number.Integer.Long */
+    .ne {
+        font-weight: bold;
+        color: #D2413A;
+    }
+
+    /* Name.Exception */
+    .bp {
+        color: #008000;
+    }
+
+    /* Name.Builtin.Pseudo */
+    .nn {
+        font-weight: bold;
+        color: #0000FF;
+    }
+
+    /* Name.Namespace */
+    .ni {
+        font-weight: bold;
+        color: #999999;
+    }
+
+    /* Name.Entity */
+    .gd {
+        color: #A00000;
+    }
+
+    /* Generic.Deleted */
+    .kp {}
+
+    /* Keyword.Pseudo */
+    .no {
+        color: #880000;
+    }
+
+    /* Name.Constant */
+    .se {
+        font-weight: bold;
+        color: #BB6622;
+    }
+
+    /* String.Escape */
+    .kc {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Keyword.Constant */
+    .gs {
+        font-weight: bold;
+    }
+
+    /* Generic.Strong */
+    .sd {
+        font-style: italic;
+    }
+
+    /* String.Doc */
+    .vc {
+        color: #19177C;
+    }
+
+    /* Name.Variable.Class */
+    .mo {
+        color: #666666;
+    }
+
+    /* Number.Oct */
+    .ow {
+        font-weight: bold;
+        color: #AA22FF;
+    }
+
+    /* Operator.Word */
+    .s1 {
+        color: #BA2121;
+    }
+
+    /* String.Single */
+    .cp {
+        color: #BC7A00;
+    }
+
+    /* Comment.Preproc */
+    .go {
+        color: #888;
+    }
+
+    /* Generic.Output */
+    .kr {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Keyword.Reserved */
+</style>
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!-- RSS -->
+  
+</head>
+
+<body class="theme-base-0d layout-reverse">
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Your Own Griffin</h1>
+      <p class="lead">
+      Not just another site An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      
+      
+    </ul>
+
+    
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Top K Frequent Words</h1>
+  <span class="post-date">Jun 6 2020</span>
+      <p>Given a non-empty list of words, return the k most frequent elements.</p>
+<p>Your answer should be sorted by frequency from highest to lowest. If two words have the same frequency, then the word with the lower alphabetical order comes first.</p>
+<p>Example 1:</p>
+<pre><code class= "">Input: ["i", "love", "leetcode", "i", "love", "coding"], k = 2
+Output: ["i", "love"]
+Explanation: "i" and "love" are the two most frequent words.
+    Note that "i" comes before "love" due to a lower alphabetical order.
+</code></pre>
+<p>Example 2:</p>
+<pre><code class= "">Input: ["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"], k = 4
+Output: ["the", "is", "sunny", "day"]
+Explanation: "the", "is", "sunny" and "day" are the four most frequent words,
+    with the number of occurrence being 4, 3, 2 and 1 respectively.
+</code></pre>
+<p>Note:</p>
+<ul>
+<li>You may assume k is always valid, 1 ≤ k ≤ number of unique elements.</li>
+<li>Input words contain only lowercase letters.</li>
+</ul>
+<p>Follow up:</p>
+<ul>
+<li>Try to solve it in O(n log k) time and O(n) extra space.</li>
+</ul>
+<p>Solution:</p>
+<pre><code class= "java">class Solution {
+    public List&lt;String&gt; topKFrequent(String[] words, int k) {
+        Map&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+        for (String word : words) {
+            map.put(word, map.getOrDefault(word, 0) + 1);
+        }
+        PriorityQueue&lt;String&gt; queue = new PriorityQueue&lt;&gt;((a, b) -&gt; {  
+           Integer compare = Integer.compare(map.get(a), map.get(b));  
+           if (compare != 0) {
+               return -compare;
+           } 
+           return a.compareTo(b);
+        });
+
+        for (String word : map.keySet()) {
+            queue.add(word);
+        }
+        List&lt;String&gt; result = new ArrayList&lt;&gt;();
+        while (!queue.isEmpty() &amp;&amp; k &gt; 0) {
+            result.add(queue.poll());
+            k--;
+        }
+        return result;
+    }  
+}
+</code></pre>
+
+</div>
+</div>
+
+  </body>
+</html>

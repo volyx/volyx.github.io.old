@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Leftmost Column with at Least a One | Your Own Griffin </title>
+
+  <!-- CSS -->
+  <!-- <link rel="stylesheet" href="/assets/css/poole.css"> -->
+  <!-- <link rel="stylesheet" href="/assets/css/syntax.css"> -->
+  <!-- <link rel="stylesheet" href="/assets/css/hyde.css"> -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface"> -->
+  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/monokai.min.css"> -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script> -->
+  <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+  <!-- Icons -->
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.1.min.css"/> -->
+ 
+
+  <!-- css from jygments -->
+
+<style type="text/css">
+/* from https://anders.unix.se/ */
+/* 1024 bytes of CSS should be enough for anybody. */
+
+body {
+  color: #222;
+  line-height: 1.5;
+  margin: 1em auto;
+  max-width: 40em;
+  padding: 0 1em;
+}
+
+@media only screen and (min-width: 40.063em) {
+  body {
+    font-size: 112.5%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  font-size: x-large;
+}
+
+a {
+  border-bottom: 1px solid #bbb;
+  color: #111;
+  text-decoration: none;
+}
+
+ul {
+  list-style: circle;
+}
+
+ul,
+ol {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 0.3em;
+  margin-left: 1em;
+}
+
+blockquote {
+  border-left: 1px solid #ccc;
+  margin: .7rem 0;
+  padding-left: 1rem;
+}
+
+figure > a,
+a img {
+  border-bottom: none;
+}
+
+img {
+  height: auto;
+  margin: .7rem auto;
+  max-width: 100%;
+}
+
+figcaption {
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  display: block;
+  height: 1rem;
+  line-height: 1;
+  margin: 0 0.7em;
+  padding: 0;
+}
+
+hr::after {
+  color: #333;
+  content: "\00B6";
+  display: block;
+  text-align: center;
+}
+
+header,
+footer,
+.center {
+  text-align: center;
+}
+
+footer {
+  color: #b64a4a;
+}
+
+/* Fnord. */
+
+</style>
+
+
+  <style type="text/css">
+    td.linenos {
+        background-color: #f0f0f0;
+        padding-right: 10px;
+    }
+
+    span.lineno {
+        background-color: #f0f0f0;
+        padding: 0 5px 0 5px;
+    }
+
+    pre {
+        line-height: 125%;
+        background-color: aliceblue;
+    }
+
+    .w {
+        color: #bbbbbb;
+    }
+
+    /* Whitespace */
+    .gh {
+        font-weight: bold;
+        color: #000080;
+    }
+
+    /* Generic.Heading */
+    .sh {
+        color: #BA2121;
+    }
+
+    /* String.Heredoc */
+    .c1 {
+        font-style: italic;
+        color: #408080;
+    }
+
+    /* Comment.Single */
+    .k {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Keyword */
+    .gt {
+        color: #04D;
+    }
+
+    /* Generic.Traceback */
+    .c {
+        font-style: italic;
+        color: #408080;
+    }
+
+    /* Comment */
+    .nv {
+        color: #19177C;
+    }
+
+    /* Name.Variable */
+    .vi {
+        color: #19177C;
+    }
+
+    /* Name.Variable.Instance */
+    .mi {
+        color: #666666;
+    }
+
+    /* Number.Integer */
+    .gp {
+        font-weight: bold;
+        color: #000080;
+    }
+
+    /* Generic.Prompt */
+    .nf {
+        color: #0000FF;
+    }
+
+    /* Name.Function */
+    .o {
+        color: #666666;
+    }
+
+    /* Operator */
+    .nc {
+        font-weight: bold;
+        color: #0000FF;
+    }
+
+    /* Name.Class */
+    .si {
+        font-weight: bold;
+        color: #BB6688;
+    }
+
+    /* String.Interpol */
+    .s2 {
+        color: #BA2121;
+    }
+
+    /* String.Double */
+    .mf {
+        color: #666666;
+    }
+
+    /* Number.Float */
+    .gr {
+        color: #FF0000;
+    }
+
+    /* Generic.Error */
+    .gu {
+        font-weight: bold;
+        color: #800080;
+    }
+
+    /* Generic.Subheading */
+    .nb {
+        color: #008000;
+    }
+
+    /* Name.Builtin */
+    .kd {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Keyword.Declaration */
+    .kt {
+        color: #B00040;
+    }
+
+    /* Keyword.Type */
+    .sx {
+        color: #008000;
+    }
+
+    /* String.Other */
+    .s {
+        color: #BA2121;
+    }
+
+    /* String */
+    .m {
+        color: #666666;
+    }
+
+    /* Number */
+    .mh {
+        color: #666666;
+    }
+
+    /* Number.Hex */
+    .sr {
+        color: #BB6688;
+    }
+
+    /* String.Regex */
+    .na {
+        color: #7D9029;
+    }
+
+    /* Name.Attribute */
+    .sb {
+        color: #BA2121;
+    }
+
+    /* String.Backtick */
+    .err {
+        color: border;
+        color: #FF0000;
+    }
+
+    /* Error */
+    .nl {
+        color: #A0A000;
+    }
+
+    /* Name.Label */
+    .nt {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Name.Tag */
+    .cs {
+        font-style: italic;
+        color: #408080;
+    }
+
+    /* Comment.Special */
+    .vg {
+        color: #19177C;
+    }
+
+    /* Name.Variable.Global */
+    .ss {
+        color: #19177C;
+    }
+
+    /* String.Symbol */
+    .cm {
+        font-style: italic;
+        color: #408080;
+    }
+
+    /* Comment.Multiline */
+    .ge {
+        font-style: italic;
+    }
+
+    /* Generic.Emph */
+    .gi {
+        color: #00A000;
+    }
+
+    /* Generic.Inserted */
+    .nd {
+        color: #AA22FF;
+    }
+
+    /* Name.Decorator */
+    .sc {
+        color: #BA2121;
+    }
+
+    /* String.Char */
+    .kn {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Keyword.Namespace */
+    .il {
+        color: #666666;
+    }
+
+    /* Number.Integer.Long */
+    .ne {
+        font-weight: bold;
+        color: #D2413A;
+    }
+
+    /* Name.Exception */
+    .bp {
+        color: #008000;
+    }
+
+    /* Name.Builtin.Pseudo */
+    .nn {
+        font-weight: bold;
+        color: #0000FF;
+    }
+
+    /* Name.Namespace */
+    .ni {
+        font-weight: bold;
+        color: #999999;
+    }
+
+    /* Name.Entity */
+    .gd {
+        color: #A00000;
+    }
+
+    /* Generic.Deleted */
+    .kp {}
+
+    /* Keyword.Pseudo */
+    .no {
+        color: #880000;
+    }
+
+    /* Name.Constant */
+    .se {
+        font-weight: bold;
+        color: #BB6622;
+    }
+
+    /* String.Escape */
+    .kc {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Keyword.Constant */
+    .gs {
+        font-weight: bold;
+    }
+
+    /* Generic.Strong */
+    .sd {
+        font-style: italic;
+    }
+
+    /* String.Doc */
+    .vc {
+        color: #19177C;
+    }
+
+    /* Name.Variable.Class */
+    .mo {
+        color: #666666;
+    }
+
+    /* Number.Oct */
+    .ow {
+        font-weight: bold;
+        color: #AA22FF;
+    }
+
+    /* Operator.Word */
+    .s1 {
+        color: #BA2121;
+    }
+
+    /* String.Single */
+    .cp {
+        color: #BC7A00;
+    }
+
+    /* Comment.Preproc */
+    .go {
+        color: #888;
+    }
+
+    /* Generic.Output */
+    .kr {
+        font-weight: bold;
+        color: #008000;
+    }
+
+    /* Keyword.Reserved */
+</style>
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!-- RSS -->
+  
+</head>
+
+<body class="theme-base-0d layout-reverse">
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Your Own Griffin</h1>
+      <p class="lead">
+      Not just another site An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+      
+      
+    </ul>
+
+    
+  </div>
+</div>
+
+
+    <div class="content container">
+<div class="post">
+  <h1>Leftmost Column with at Least a One</h1>
+  <span class="post-date">Apr 26 2020</span>
+      <p>(This problem is an interactive problem.)</p>
+<p>A binary matrix means that all elements are 0 or 1. For each individual row of the matrix, this row is sorted in non-decreasing order.</p>
+<p>Given a row-sorted binary matrix binaryMatrix, return leftmost column index(0-indexed) with at least a 1 in it. If such index doesn't exist, return -1.</p>
+<p>You can't access the Binary Matrix directly.  You may only access the matrix using a BinaryMatrix interface:</p>
+<pre><code class= "">BinaryMatrix.get(row, col) returns the element of the matrix at index (row, col) (0-indexed).
+BinaryMatrix.dimensions() returns a list of 2 elements [rows, cols], which means the matrix is rows * cols.
+</code></pre>
+<p>Submissions making more than 1000 calls to BinaryMatrix.get will be judged Wrong Answer.  Also, any solutions that attempt to circumvent the judge will result in disqualification.</p>
+<p>For custom testing purposes you're given the binary matrix mat as input in the following four examples. You will not have access the binary matrix directly.</p>
+<p>Example 1:</p>
+<p><img src="https://assets.leetcode.com/uploads/2019/10/25/untitled-diagram-5.jpg" alt="alt example1" /></p>
+<pre><code class= "">Input: mat = [[0,0],[1,1]]
+Output: 0
+</code></pre>
+<p>Example 2:</p>
+<p><img src="https://assets.leetcode.com/uploads/2019/10/25/untitled-diagram-4.jpg" alt="alt example2" /></p>
+<pre><code class= "">Input: mat = [[0,0],[0,1]]
+Output: 1
+</code></pre>
+<p>Example 3:</p>
+<p><img src="https://assets.leetcode.com/uploads/2019/10/25/untitled-diagram-3.jpg" alt="alt example3" /></p>
+<pre><code class= "">Input: mat = [[0,0],[0,0]]
+Output: -1
+</code></pre>
+<p>Example 4:</p>
+<p><img src="https://assets.leetcode.com/uploads/2019/10/25/untitled-diagram-6.jpg" alt="alt example4" /></p>
+<pre><code class= "">Input: mat = [[0,0,0,1],[0,0,1,1],[0,1,1,1]]
+Output: 1
+</code></pre>
+<p>Constraints:</p>
+<pre><code class= "">    rows == mat.length
+    cols == mat[i].length
+    1 &lt;= rows, cols &lt;= 100
+    mat[i][j] is either 0 or 1.
+    mat[i] is sorted in a non-decreasing way.
+</code></pre>
+<p>Dev notes: we start from top corner and find mimimal column index that don't equal 1</p>
+<pre><code class= "java">/**
+ * // This is the BinaryMatrix's API interface.
+ * // You should not implement it, or speculate about its implementation
+ * interface BinaryMatrix {
+ *     public int get(int row, int col) {}
+ *     public List&lt;Integer&gt; dimensions {}
+ * };
+ */
+
+class Solution {
+    public int leftMostColumnWithOne(BinaryMatrix binaryMatrix) {
+        // [rows, cols]
+        List&lt;Integer&gt; rowCols = binaryMatrix.dimensions();
+        int rows = rowCols.get(0);
+        int cols = rowCols.get(1);
+
+        if (rows == 0 &amp;&amp; cols == 0) {
+            return -1;
+        }
+
+        int maxIndex = Integer.MAX_VALUE;
+        int j = cols - 1;
+        for (int i = 0; i &lt; rows; i++) {
+            while (j &gt; -1 &amp;&amp; binaryMatrix.get(i, j) == 1) {
+                maxIndex = Math.min(maxIndex, j);
+                j--;
+                System.out.printf("%d %d\n", i, j);
+            }
+        }
+        return maxIndex == Integer.MAX_VALUE ? -1: maxIndex;
+    }
+}
+</code></pre>
+
+</div>
+</div>
+
+  </body>
+</html>
